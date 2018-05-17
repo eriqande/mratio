@@ -4,7 +4,7 @@ mratio : programs for bottleneck detection
 
 This is a home for Mac OSX executables of `M_P_Val` and `Critical_M`. These programs are distributed at <https://swfsc.noaa.gov/textblock.aspx?Division=FED&id=3298>; however, the versions there have a Java wrapper that doesn't seem to work on newer versions of Mac OSX. So, instead, this repo has the command-line binaries, and this document shows how to call the programs on the command line.
 
-This repo is an Rstudio project, so if you wanted to get it you could just open it as a new project from version control in Rstudio. Or download the repo as a zip. Or clone it.
+This repo is an Rstudio project, so if you wanted to get it you could just open it as a new project from version control in Rstudio (using the address `https://github.com/eriqande/mratio`). Or download the repo as a zip. Or clone it.
 
 Once you have it, here is an example of how to run the programs. I am writing this for someone who doesn't live in the Terminal, but is comfortable with RStudio. The first thing you should do is open the mratio.Rproj RStudio project.
 
@@ -58,5 +58,3 @@ Same drill here:
     ```
 
     Then it prompts you for input.
-
-Eeezy-Peezy!
