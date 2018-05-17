@@ -1,0 +1,148 @@
+P_val_M  --  Calculate M and assess significance for a microsatellite data set
+
+Author(s):
+        Ellen Williamson (CLI interface by Eric C. Anderson)
+
+About the Program:
+    M_P_Val.exe calculates the value of M for a microsatellite data set. The use of
+    M to detect population bottlenecks is described in: J. C. Garza and E. G.
+    Williamson (2001) Detection of reduction in population size using data from
+    microsatellite loci. Molecular Ecology 10, 305–318
+    doi:10.1046/j.1365-294x.2001.01190.x. The program then simulates an equilibrium
+    distribution of M, according to the method described in Garza and Williamson
+    (2001), and given assumed values for the three parameters of the two-phase
+    mutation model, and rank the calculated value relative to the equilibrium
+    distribution. Using conventional criteria, there is evidence of a significant
+    reduction in population size if less than 54023220145f the replicates are below
+    the observed value. The input file consists of the relative allele sizes,
+    simple allele counts and assumed mean values for the three parameters:
+    theta=4*effective population size*mutation rate, ps=mean percentage of
+    mutations that add or delete only one repeat unit (the program actually uses
+    ps-1) and deltag=mean size of larger mutations. The proper format for the input
+    file is described below. In a survey of empirical mutation data from the
+    literature, Garza and Williamson (2001) found ps=0.88 and deltag=2.8. Theta
+    will be population specific.
+
+     This program was written by Ellen Williamson. In April of 2008, Eric C.
+    Anderson made some additions to clean up the command line interface a little
+    bit and to host this program within the GuiLiner GUI written by Nicholas
+    Manoukis.
+
+        An example input file looks like:
+
+                # example input file, you can write comments on lines that start with #
+
+                #entries should be separated by tabs or spaces
+
+                # on the first row list
+
+                # pre-bottleneck theta = 4*(effective population size)*(mutation rate)
+
+                # then average size of mutations that are not one-step mutations
+
+                # then the percent of the time mutations are larger (not one-step)
+
+                4 3.5 0.2
+
+
+
+                # now list each locus one at a time, first put the size of repeats
+
+                # for this locus (ie 2 would mean this is a dinucleotide microsatellite)
+
+                2
+
+                #then put the allele sizes
+
+                10 8 6 4 2
+
+                # then the number of observations of each type of allele
+
+                22 20 20 24 20
+
+                # This is the format for locus 2
+
+                3
+                0 3 6 12
+                10 1 10 10
+                # thats it!
+
+
+In the following:
+        "J" refers to an integer argument to an option
+
+        "R" refers to a real number argument to an option
+
+        "S" refers to a string argument to an option
+
+        "F" refers to a file path argument to an option. For example,
+                "datfile.txt" if the file is in the current working directory, or
+                something like "~/eriq/Documents/data/datfile.txt" if you want to
+                provide a complete file path.  (Beware of spaces in file paths!)
+
+        "D" refers to a directory path argument to an option. For example,
+                "data_direcory/" if the directory is in the current working directory, or
+                something like "~/eriq/Documents/data_directory/" if you want to
+                provide a complete directory path.  Note that the trailing slash should be
+                optional, but currently is not.  (ERIC ADD MACROS FOR GETTING FILES AND DIRECTORIES
+
+        "G" refers to a string that gives a (possibly) discontinous range of
+                nonnegative integers.  For example:  "1-5,7,9,10-15" specifies
+                the integers 1 through 5, 7, 9, and 10 through 15.  There can be no
+                whitespace in the string specifying the range, and the numbers must all
+                be increasing.  Also, the string cannot start nor end with a comma or a dash.
+                Finally, you should not use "-" to denote two ranges without placing any
+                commas in between.
+
+        "C" refers to a "constrained" string argument to an option,
+                i.e., the argument is a string that may only be drawn from a small
+                set of alternatives, as specified in the help-full description.
+
+   ****  Program-description and documentation  parameters  ****
+
+     --help
+        this returns a short list of all program options and associated
+        arguments
+
+     --help-full
+        this returns a full list of all program options and associated
+        arguments
+
+     --help-nroff
+        this returns a full list of all program options and associated
+        arguments using the formatting styles in nroff that give you the look
+        of a man page. View the formatted ouput by doing: 'prog --help-nroff
+        | nroff -man | more' where prog is the name of the program.
+
+     --help-xml
+        This returns a list of all options in a simple XML format which is
+        suitable for input to the guiLiner front end.
+
+     --version
+        prints program version information
+
+     --version-history
+        prints history of different versions
+
+     --command-file           F
+        By using this option you can store command line arguments in the file
+        named in F. You may have any kind of white space (including line
+        endings) in the file. The line endings are treated as just another
+        space. Comments may be included in the file by enclosing them within
+        a pair of ampersands (the & character). Note that you must have a &
+        at the beginning and at the end of the comment. You cannot use just a
+        single & to comment to the end of a line. Your comments may spread
+        over several lines---they will still be stripped from the resulting
+        command line so long as the are enclosed in ampersands. This feature
+        is helpful if you have long and complex command lines that you wish
+        to store if it makes it easier to read the command line by breaking
+        it across multiple lines or if you have certain clusters of options
+        that you like to store together as a module. This option may be used
+        up to 10000 times. Optional.
+
+
+   ****  Options the user can input  ****
+
+-f                            F
+        Use this option to give the program the path to the input file. Proper
+        file format is given in the information about the program.
