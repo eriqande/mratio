@@ -18,6 +18,11 @@ This is a home for Mac OSX executables of `M_P_Val` and `Critical_M`.
 These programs are distributed 
 at [https://swfsc.noaa.gov/textblock.aspx?Division=FED&id=3298](https://swfsc.noaa.gov/textblock.aspx?Division=FED&id=3298); however, the versions there have a Java wrapper that doesn't seem to work on newer versions of Mac OSX.  So, instead, this repo has the command-line binaries, and this document shows how to call the programs on the command line.
 
+**Note on source code**: I added source code in the directory `src` in April 2020.  This source code
+is over a decade old and is no longer compliant for most compilers, it would seem.  I put it up
+here in case someone might want to wrassle with getting it to compile on their system.  If you get
+it working, please send me a pull request with the required modifications.
+
 This repo is an Rstudio project, so if you wanted to get it you could just open it as a new project from version control in Rstudio (using the address `https://github.com/eriqande/mratio`).  Or download the repo as a zip.  Or clone it.
 
 Once you have it, here is an example of how to run the programs. I am writing this for someone who doesn't live in the Terminal, but is comfortable with RStudio.  The first thing you should do is open the mratio.Rproj RStudio project.
