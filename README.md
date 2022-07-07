@@ -26,32 +26,59 @@ writing this for someone who doesn’t live in the Terminal, but is
 comfortable with RStudio. The first thing you should do is open the
 mratio.Rproj RStudio project.
 
-## Running M\_P\_Val
+## Running M_P\_Val
 
 1.  Open a terminal window in the RStudio Project (Menu option: Tools
     -\> Terminal -\> New Terminal) This will give you a command prompt
     in the mratio project directory.
 
-2.  From there you can run M\_P\_val like this: `sh ./bin/M_P_val` That
-    will send back an error like this: \`\`\`sh Error Processing Option
-    -f\! The option -f is required but is absent.
-    
-    Errors encountered processing command line. Use M\_P\_val –help or
-    M\_P\_val –help-full for information on available options \`\`\`
+2.  From there you can run M_P\_val like this:
+
+    ``` sh
+    ./bin/M_P_val
+    ```
+
+    That will send back an error like this:
+
+    ``` sh
+    Error Processing Option -f!    The option -f is required but is absent.
+
+    Errors encountered processing command line.  Use
+        M_P_val --help
+    or
+        M_P_val --help-full
+    for information on available options
+    ```
+
     That is just telling you that you need to pass it an input file.
 
-3.  To see all the available program options, do this: `sh ./bin/M_P_val
-    --help-full` That will tell you give you all the information, which
-    you can also read in the file `M_P_val_help_full.txt` in the repo.
+3.  To see all the available program options, do this:
 
-4.  You can run it on the example file like this: `sh ./bin/M_P_val -f
-    data/example_data.txt` To run your own data file, just make your
-    file, and then call the program, replacing `data/example_data.txt`
-    with the path to your file.
+    ``` sh
+    ./bin/M_P_val --help-full
+    ```
 
-## Running Critical\_M
+    That will tell you give you all the information, which you can also
+    read in the file `M_P_val_help_full.txt` in the repo.
+
+4.  You can run it on the example file like this:
+
+    ``` sh
+    ./bin/M_P_val -f data/example_data.txt
+    ```
+
+    To run your own data file, just make your file, and then call the
+    program, replacing `data/example_data.txt` with the path to your
+    file.
+
+## Running Critical_M
 
 Same drill here:
 
-1.  You just run it in the terminal like this: `sh ./bin/Critical_M`
+1.  You just run it in the terminal like this:
+
+    ``` sh
+    ./bin/Critical_M
+    ```
+
     Then it prompts you for input.

@@ -31,11 +31,11 @@ Once you have it, here is an example of how to run the programs. I am writing th
 
 1. Open a terminal window in the RStudio Project  (Menu option: Tools -> Terminal -> New Terminal) This will give you a command prompt in the mratio project directory.
 2. From there you can run M_P_val like this:
-    ```sh
+    ```{sh, eval=FALSE}
     ./bin/M_P_val
     ```
     That will send back an error like this:
-    ```sh
+    ```{sh, eval=FALSE}
     Error Processing Option -f!    The option -f is required but is absent.
 
     Errors encountered processing command line.  Use
@@ -46,13 +46,13 @@ Once you have it, here is an example of how to run the programs. I am writing th
     ```
     That is just telling you that you need to pass it an input file.
 3. To see all the available program options, do this:
-    ```sh
+    ```{sh, eval=FALSE}
     ./bin/M_P_val --help-full
     ```
     That will tell you give you all the information, which you can also read in the 
     file `M_P_val_help_full.txt` in the repo.
 4. You can run it on the example file like this:
-    ```sh
+    ```{sh, eval=FALSE}
     ./bin/M_P_val -f data/example_data.txt
     ```
     To run your own data file, just make your file, and then call the program, replacing
@@ -63,7 +63,7 @@ Once you have it, here is an example of how to run the programs. I am writing th
 Same drill here:
 
 1. You just run it in the terminal like this:
-    ```sh
+    ```{sh, eval=FALSE}
     ./bin/Critical_M
     ```
     Then it prompts you for input.
